@@ -51,42 +51,6 @@ const Sidebar = () => {
               <span className="icon">
                 <FaProductHunt />
               </span>
-              Category
-              <span className="arrow">
-                <FaAngleRight />
-              </span>
-            </Button>
-            <div
-              className={`submenuWrapper ${
-                activeTab === 1 && isToogleSubmenu === true
-                  ? "collaspe"
-                  : "collasped"
-              }`}
-            >
-              <div className="submenu">
-                <ul>
-                  <li>
-                    <Link to="/category">Category List</Link>
-                  </li>
-
-                  <li>
-                    <Link to="/category/add">Add Category</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <Button
-              className={`w-100 ${
-                activeTab === 2 && isToogleSubmenu === true ? "active" : ""
-              }`}
-              onClick={() => isOpenSubmenu(2)}
-            >
-              <span className="icon">
-                <FaProductHunt />
-              </span>
               Products
               <span className="arrow">
                 <FaAngleRight />
@@ -94,7 +58,7 @@ const Sidebar = () => {
             </Button>
             <div
               className={`submenuWrapper ${
-                activeTab === 2 && isToogleSubmenu === true
+                activeTab === 1 && isToogleSubmenu === true
                   ? "collaspe"
                   : "collasped"
               }`}
@@ -113,6 +77,74 @@ const Sidebar = () => {
                 </ul>
               </div>
             </div>
+          </li>
+
+          <li>
+            <Link to="">
+              <Button
+                className={`w-100 ${activeTab === 2 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(2)}
+              >
+                <span className="icon">
+                  <FaShoppingCart />
+                </span>
+                Orders
+                <span className="arrow">
+                  <FaAngleRight />
+                </span>
+              </Button>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="">
+              <Button
+                className={`w-100 ${activeTab === 3 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(3)}
+              >
+                <span className="icon">
+                  <MdMessage />
+                </span>
+                Messages
+                <span className="arrow">
+                  <FaAngleRight />
+                </span>
+              </Button>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="">
+              <Button
+                className={`w-100 ${activeTab === 4 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(4)}
+              >
+                <span className="icon">
+                  <FaBell />
+                </span>
+                Notifications
+                <span className="arrow">
+                  <FaAngleRight />
+                </span>
+              </Button>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="">
+              <Button
+                className={`w-100 ${activeTab === 5 ? "active" : ""}`}
+                onClick={() => isOpenSubmenu(5)}
+              >
+                <span className="icon">
+                  <IoMdSettings />
+                </span>
+                Settings
+                <span className="arrow">
+                  <FaAngleRight />
+                </span>
+              </Button>
+            </Link>
           </li>
         </ul>
         <div className="logoutWrapper">

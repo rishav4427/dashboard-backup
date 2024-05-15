@@ -238,7 +238,7 @@ body.dark .myAcc .userInfo * {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-body.dark .MuiPaper-elevation {
+body.dark .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
   background-color: #12254e !important;
 }
 
@@ -854,13 +854,14 @@ table.v-align td {
 }
 
 table td .imgWrapper {
-  width: 30%;
-  flex: 0 0 30%;
+  width: 35%;
+  flex: 0 0 35%;
+  margin-right: 10px;
 }
 
 table td .info {
-  width: 70%;
-  flex: 0 0 70%;
+  width: 65%;
+  flex: 0 0 65%;
 }
 
 table td .info h6 {
@@ -1344,7 +1345,7 @@ body.light .reviewForm textarea {
   width: 100%;
   outline: none !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  height: 40px;
+  height: 55px;
   padding-left: 15px;
   border-radius: 5px;
   font-size: 14px;
@@ -1360,4 +1361,125 @@ body.dark .form .form-group textarea {
   background: #1b2b4d !important;
   border: 1px solid #253557 !important;
   color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.editModal .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  width: 600px !important;
+}
+
+button .loader {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.productHead .buttonaddcat {
+  height: 30px !important;
+}
+
+body.dark .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
+body.dark .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-1lg55su-MuiButtonBase-root-MuiButton-root {
+  color: #38ff42 !important;
+}
+
+body.dark .css-10fi992-MuiButtonBase-root-MuiButton-root {
+  color: #ff0000 !important;
+}
+
+.topLoadingBar {
+  height: 4px !important;
+  background: #0858f7 !important;
+}
+
+body.dark
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .css-6hp17o-MuiList-root-MuiMenu-list {
+  background: #071739 !important;
+}
+
+.stickyBox {
+  position: sticky;
+  top: 90px;
+}
+
+.stickyBox h4 {
+  font-size: 22px;
+}
+
+.imgGrid {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.imgGrid .img {
+  width: 48%;
+  overflow: hidden;
+  border-radius: 7px;
+  height: 100px;
+}
+
+.imgGrid .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inputBtn button {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  z-index: 100;
+}
+
+.imgUploadBox {
+  width: 100%;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.imgUploadBox .uploadBox {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px dashed rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.imgUploadBox .uploadBox input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.imgUploadBox .uploadBox .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.imgUploadBox .uploadBox .info svg {
+  font-size: 50px;
+  opacity: 0.2;
+}
+
+.imgUploadBox .uploadBox .info h5 {
+  font-size: 15px;
+  text-align: center;
+  opacity: 0.5;
 }

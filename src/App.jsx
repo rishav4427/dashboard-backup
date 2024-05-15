@@ -13,6 +13,12 @@ import ProductDetails from "./pages/ProductDetails";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductUpload from "./pages/ProductUpload";
+import CategoryAdd from "./pages/CategoryAdd";
+import Category from "./pages/Category";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+
+import LoadingBar from "react-top-loading-bar";
 
 const MyContext = createContext();
 function App() {
@@ -20,6 +26,23 @@ function App() {
   const [isLogin, setIsLogin] = useState(true);
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
+  const [baseUrl, setBaseUrl] = useState("http://localhost:4000");
+  const [alertBox, setAlertBox] = useState({
+    msg: "",
+    error: false,
+    open: false,
+  });
+  const [progress, setProgress] = useState(0);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setAlertBox({
+      open: false,
+    });
+  };
 
   const values = {
     isToogleSidebar,
@@ -30,6 +53,10 @@ function App() {
     setIsHideSidebarAndHeader,
     themeMode,
     setThemeMode,
+    alertBox,
+    setAlertBox,
+    setProgress,
+    baseUrl,
   };
 
   useEffect(() => {
@@ -47,6 +74,26 @@ function App() {
   return (
     <BrowserRouter>
       <MyContext.Provider value={values}>
+        <LoadingBar
+          color="#f11946"
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+          className="topLoadingBar"
+        />
+        <Snackbar
+          open={alertBox.open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert
+            onClose={handleClose}
+            severity={alertBox.error === false ? "success" : "error"}
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            {alertBox.msg}
+          </Alert>
+        </Snackbar>
         {isHideSidebarAndHeader !== true && <Header />}
 
         <div className="main d-flex">
@@ -80,6 +127,14 @@ function App() {
                 exact={true}
                 element={<ProductUpload />}
               />
+
+              <Route
+                path="/category/add"
+                exact={true}
+                element={<CategoryAdd />}
+              />
+
+              <Route path="/category" exact={true} element={<Category />} />
             </Routes>
           </div>
         </div>
